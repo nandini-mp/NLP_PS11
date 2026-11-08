@@ -1,0 +1,270 @@
+{
+  "pair_id": 12,
+  "train_project": "MongoDB Core Server",
+  "test_project": "Bamboo",
+  "train_project_tawos": "MongoDB Core Server",
+  "test_project_tawos": "Atlassian Bamboo ",
+  "mode": "sbert",
+  "backend": "hf",
+  "n_source": 743,
+  "n_target_total": 516,
+  "n_source_dev": 594,
+  "n_target_test": 103,
+  "grid": [
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        1.481902355907344,
+        1.0860760282067692,
+        1.162494341866309,
+        1.541106070790972,
+        1.1123103661052252
+      ],
+      "fold_MdAE": [
+        0.756799578666687,
+        0.7886059284210205,
+        0.7696189880371094,
+        0.7587652206420898,
+        0.7357751131057739
+      ],
+      "MAE_mean": 1.2767778325753238,
+      "MAE_std": 0.21703855046715204,
+      "MdAE_mean": 0.7619129657745362,
+      "MdAE_std": 0.019307637110903556,
+      "best_epochs": [
+        10,
+        14,
+        8,
+        5,
+        5
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        1.4877645418423564,
+        1.117626913455354,
+        1.1513759769311471,
+        1.543320568669744,
+        1.1111969079001476
+      ],
+      "fold_MdAE": [
+        0.7865116596221924,
+        0.8106024265289307,
+        0.8136954307556152,
+        0.7881486415863037,
+        0.798012375831604
+      ],
+      "MAE_mean": 1.2822569817597498,
+      "MAE_std": 0.21440732225435163,
+      "MdAE_mean": 0.7993941068649292,
+      "MdAE_std": 0.01249481304041673,
+      "best_epochs": [
+        18,
+        20,
+        16,
+        12,
+        13
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        1.4848150024894906,
+        1.0556644852421864,
+        1.1402560612734627,
+        1.5325898873705823,
+        1.113452948756137
+      ],
+      "fold_MdAE": [
+        0.7236499786376953,
+        0.7170963287353516,
+        0.7417612075805664,
+        0.7644126415252686,
+        0.72444748878479
+      ],
+      "MAE_mean": 1.2653556770263719,
+      "MAE_std": 0.2248728903960853,
+      "MdAE_mean": 0.7342735290527344,
+      "MdAE_std": 0.019163106036599722,
+      "best_epochs": [
+        7,
+        21,
+        7,
+        6,
+        8
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        1.4878078679076763,
+        1.2333341336049954,
+        1.1426601830650778,
+        1.5367304367177628,
+        1.1120478531061593
+      ],
+      "fold_MdAE": [
+        0.7576749324798584,
+        0.9850223064422607,
+        0.7701621055603027,
+        0.7584097385406494,
+        0.7508396506309509
+      ],
+      "MAE_mean": 1.3025160948803343,
+      "MAE_std": 0.19736236122085876,
+      "MdAE_mean": 0.8044217467308045,
+      "MdAE_std": 0.10119745024453447,
+      "best_epochs": [
+        18,
+        1,
+        19,
+        15,
+        15
+      ]
+    }
+  ],
+  "selected_hp": {
+    "dropout": 0.4,
+    "lr": 0.001
+  },
+  "cv": {
+    "hp": {
+      "dropout": 0.4,
+      "lr": 0.001
+    },
+    "fold_MAE": [
+      1.4848150024894906,
+      1.0556644852421864,
+      1.1402560612734627,
+      1.5325898873705823,
+      1.113452948756137
+    ],
+    "fold_MdAE": [
+      0.7236499786376953,
+      0.7170963287353516,
+      0.7417612075805664,
+      0.7644126415252686,
+      0.72444748878479
+    ],
+    "MAE_mean": 1.2653556770263719,
+    "MAE_std": 0.2248728903960853,
+    "MdAE_mean": 0.7342735290527344,
+    "MdAE_std": 0.019163106036599722,
+    "best_epochs": [
+      7,
+      21,
+      7,
+      6,
+      8
+    ]
+  },
+  "final_epochs": 7,
+  "test": {
+    "MAE": 1.1187895374390686,
+    "MdAE": 0.8117010593414307
+  },
+  "baseline_median_test": {
+    "MAE": 1.0436893203883495,
+    "MdAE": 1.0
+  },
+  "source_sp_median": 2.0,
+  "target_sp_median": 2.0,
+  "status": "done",
+  "runtime_sec": 90.3,
+  "env": {
+    "torch": "2.14.1+cpu",
+    "python": "3.13.18",
+    "device": "cpu"
+  },
+  "config": {
+    "seed": 42,
+    "data": {
+      "csv_path": "data/tawos_story_points.csv",
+      "pairs_path": "data/pairs.csv",
+      "columns": {
+        "id": "Issue_ID",
+        "project": "Project_Name",
+        "title": "Title",
+        "description": "Description_Text",
+        "created": "Creation_Date",
+        "story_point": "Story_Point"
+      },
+      "project_aliases": {
+        "C++ driver (MongoDB)": "The Mongo C++ driver",
+        "Evergreen": "The MongoDB Engineering",
+        "C++ driver (Appcelerator)": "Aptana Studio"
+      },
+      "max_story_point": 500,
+      "min_source_issues": 50,
+      "min_target_test_issues": 10
+    },
+    "split": {
+      "source_dev_fraction": 0.8,
+      "n_folds": 5,
+      "target_test_fraction": 0.2
+    },
+    "text": {
+      "max_tokens": 128
+    },
+    "embeddings": {
+      "backend": "hf",
+      "bert_model": "bert-base-uncased",
+      "bert_layer": -1,
+      "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "batch_size": 32,
+      "cache_dir": "/content/cache"
+    },
+    "model": {
+      "mode": "sbert",
+      "conv_channels": [
+        128,
+        128,
+        128
+      ],
+      "kernel_size": 3,
+      "sbert_proj_dim": 128,
+      "head_hidden": 128
+    },
+    "train": {
+      "max_epochs": 30,
+      "patience": 5,
+      "batch_size": 32,
+      "weight_decay": 0.0001,
+      "huber_delta": 1.0,
+      "grid": {
+        "lr": [
+          0.001,
+          0.0003
+        ],
+        "dropout": [
+          0.2,
+          0.4
+        ]
+      }
+    },
+    "output": {
+      "results_dir": "results"
+    },
+    "report": {
+      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)",
+      "group_members": [
+        "Member 1 name (roll no.)",
+        "Member 2 name (roll no.)"
+      ],
+      "github_url": "https://github.com/<your-username>/<your-repo>"
+    }
+  }
+}

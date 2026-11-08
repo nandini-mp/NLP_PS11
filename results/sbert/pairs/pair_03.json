@@ -1,0 +1,270 @@
+{
+  "pair_id": 3,
+  "train_project": "Titanium Mobile Platform",
+  "test_project": "Usergrid",
+  "train_project_tawos": "Titanium Mobile Platform",
+  "test_project_tawos": "Apache Usergrid",
+  "mode": "sbert",
+  "backend": "hf",
+  "n_source": 1280,
+  "n_target_total": 482,
+  "n_source_dev": 1024,
+  "n_target_test": 96,
+  "grid": [
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        3.0337360498381822,
+        2.590386675043804,
+        2.7896200348691242,
+        2.6614667566811168,
+        2.094444938734466
+      ],
+      "fold_MdAE": [
+        1.1493146419525146,
+        1.3060681819915771,
+        1.4577677249908447,
+        1.469989538192749,
+        1.258847951889038
+      ],
+      "MAE_mean": 2.6339308910333386,
+      "MAE_std": 0.34560913250600866,
+      "MdAE_mean": 1.3283976078033448,
+      "MdAE_std": 0.13619046270326407,
+      "best_epochs": [
+        16,
+        15,
+        9,
+        7,
+        9
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        3.0361176077912493,
+        2.697361476828412,
+        2.8066038748113122,
+        2.648734493371917,
+        2.0954573049264797
+      ],
+      "fold_MdAE": [
+        1.2989778518676758,
+        1.6271977424621582,
+        1.4233784675598145,
+        1.5970747470855713,
+        1.3430662155151367
+      ],
+      "MAE_mean": 2.656854951545874,
+      "MAE_std": 0.3475409833755833,
+      "MdAE_mean": 1.4579390048980714,
+      "MdAE_std": 0.148042317978959,
+      "best_epochs": [
+        29,
+        30,
+        23,
+        12,
+        23
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        3.0352989679429587,
+        2.5622055681740363,
+        2.7885952350569934,
+        2.643878975728663,
+        2.0850153489440095
+      ],
+      "fold_MdAE": [
+        1.236229419708252,
+        1.4025154113769531,
+        1.4752655029296875,
+        1.6159887313842773,
+        1.1293519735336304
+      ],
+      "MAE_mean": 2.6229988191693323,
+      "MAE_std": 0.350346828219478,
+      "MdAE_mean": 1.37187020778656,
+      "MdAE_std": 0.19263766925242304,
+      "best_epochs": [
+        18,
+        19,
+        15,
+        6,
+        16
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        3.0317882822781073,
+        2.745215864879329,
+        2.8127841117905406,
+        2.6597355958892077,
+        2.0913826945950005
+      ],
+      "fold_MdAE": [
+        1.298354148864746,
+        1.7310791015625,
+        1.4281044006347656,
+        1.5522453784942627,
+        1.3168871998786926
+      ],
+      "MAE_mean": 2.6681813098864366,
+      "MAE_std": 0.3506502160416947,
+      "MdAE_mean": 1.4653340458869935,
+      "MdAE_std": 0.17991582263417571,
+      "best_epochs": [
+        30,
+        30,
+        23,
+        12,
+        23
+      ]
+    }
+  ],
+  "selected_hp": {
+    "dropout": 0.4,
+    "lr": 0.001
+  },
+  "cv": {
+    "hp": {
+      "dropout": 0.4,
+      "lr": 0.001
+    },
+    "fold_MAE": [
+      3.0352989679429587,
+      2.5622055681740363,
+      2.7885952350569934,
+      2.643878975728663,
+      2.0850153489440095
+    ],
+    "fold_MdAE": [
+      1.236229419708252,
+      1.4025154113769531,
+      1.4752655029296875,
+      1.6159887313842773,
+      1.1293519735336304
+    ],
+    "MAE_mean": 2.6229988191693323,
+    "MAE_std": 0.350346828219478,
+    "MdAE_mean": 1.37187020778656,
+    "MdAE_std": 0.19263766925242304,
+    "best_epochs": [
+      18,
+      19,
+      15,
+      6,
+      16
+    ]
+  },
+  "final_epochs": 16,
+  "test": {
+    "MAE": 1.6446892706056435,
+    "MdAE": 1.2373052835464478
+  },
+  "baseline_median_test": {
+    "MAE": 0.75,
+    "MdAE": 0.0
+  },
+  "source_sp_median": 3.0,
+  "target_sp_median": 3.0,
+  "status": "done",
+  "runtime_sec": 288.5,
+  "env": {
+    "torch": "2.14.1+cu130",
+    "python": "3.13.16",
+    "device": "cuda"
+  },
+  "config": {
+    "seed": 42,
+    "data": {
+      "csv_path": "data/tawos_story_points.csv",
+      "pairs_path": "data/pairs.csv",
+      "columns": {
+        "id": "Issue_ID",
+        "project": "Project_Name",
+        "title": "Title",
+        "description": "Description_Text",
+        "created": "Creation_Date",
+        "story_point": "Story_Point"
+      },
+      "project_aliases": {
+        "C++ driver (MongoDB)": "The Mongo C++ driver",
+        "Evergreen": "The MongoDB Engineering",
+        "C++ driver (Appcelerator)": "Aptana Studio"
+      },
+      "max_story_point": 500,
+      "min_source_issues": 50,
+      "min_target_test_issues": 10
+    },
+    "split": {
+      "source_dev_fraction": 0.8,
+      "n_folds": 5,
+      "target_test_fraction": 0.2
+    },
+    "text": {
+      "max_tokens": 128
+    },
+    "embeddings": {
+      "backend": "hf",
+      "bert_model": "bert-base-uncased",
+      "bert_layer": -1,
+      "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "batch_size": 32,
+      "cache_dir": "/content/cache"
+    },
+    "model": {
+      "mode": "sbert",
+      "conv_channels": [
+        128,
+        128,
+        128
+      ],
+      "kernel_size": 3,
+      "sbert_proj_dim": 128,
+      "head_hidden": 128
+    },
+    "train": {
+      "max_epochs": 30,
+      "patience": 5,
+      "batch_size": 32,
+      "weight_decay": 0.0001,
+      "huber_delta": 1.0,
+      "grid": {
+        "lr": [
+          0.001,
+          0.0003
+        ],
+        "dropout": [
+          0.2,
+          0.4
+        ]
+      }
+    },
+    "output": {
+      "results_dir": "results"
+    },
+    "report": {
+      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)",
+      "group_members": [
+        "Member 1 name (roll no.)",
+        "Member 2 name (roll no.)"
+      ],
+      "github_url": "https://github.com/<your-username>/<your-repo>"
+    }
+  }
+}

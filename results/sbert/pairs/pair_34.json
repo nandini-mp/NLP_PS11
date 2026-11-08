@@ -1,0 +1,270 @@
+{
+  "pair_id": 34,
+  "train_project": "Blockchain Explorer",
+  "test_project": "Moodle",
+  "train_project_tawos": "Hyperledger Blockchain Explorer",
+  "test_project_tawos": "Moodle",
+  "mode": "sbert",
+  "backend": "hf",
+  "n_source": 372,
+  "n_target_total": 1528,
+  "n_source_dev": 298,
+  "n_target_test": 306,
+  "grid": [
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        0.9419960844020049,
+        0.8658937454223633,
+        1.17284148534139,
+        1.3437211939086349,
+        1.056857760427362
+      ],
+      "fold_MdAE": [
+        0.5597720146179199,
+        0.4862707853317261,
+        0.5608378648757935,
+        0.638481855392456,
+        0.6633522510528564
+      ],
+      "MAE_mean": 1.076262053900351,
+      "MAE_std": 0.18942061697044202,
+      "MdAE_mean": 0.5817429542541503,
+      "MdAE_std": 0.07055859305486756,
+      "best_epochs": [
+        17,
+        7,
+        9,
+        9,
+        5
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        1.0859667984147867,
+        0.9094068725903829,
+        1.2895052194595338,
+        1.5604060121764571,
+        1.0434051416182921
+      ],
+      "fold_MdAE": [
+        0.9704176187515259,
+        0.9783865213394165,
+        0.961727499961853,
+        1.0212764739990234,
+        0.9413135051727295
+      ],
+      "MAE_mean": 1.1777380088518905,
+      "MAE_std": 0.2536708414003797,
+      "MdAE_mean": 0.9746243238449097,
+      "MdAE_std": 0.029513608380769878,
+      "best_epochs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        1.0973464258015155,
+        0.8629519840081533,
+        1.1797519862651824,
+        1.3505243872434407,
+        1.0541186219049712
+      ],
+      "fold_MdAE": [
+        0.9131802320480347,
+        0.5374422073364258,
+        0.5567338466644287,
+        0.6163849830627441,
+        0.8792822360992432
+      ],
+      "MAE_mean": 1.1089386810446524,
+      "MAE_std": 0.17820441353993577,
+      "MdAE_mean": 0.7006047010421753,
+      "MdAE_std": 0.18133380883379777,
+      "best_epochs": [
+        1,
+        7,
+        10,
+        11,
+        1
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        1.0850255059699216,
+        0.9090523878733318,
+        1.2887632528940836,
+        1.5597430428458472,
+        1.042683537481195
+      ],
+      "fold_MdAE": [
+        0.9748016595840454,
+        0.9828294515609741,
+        0.9664977788925171,
+        1.0163359642028809,
+        0.9442145824432373
+      ],
+      "MAE_mean": 1.1770535454128759,
+      "MAE_std": 0.2536135789487851,
+      "MdAE_mean": 0.976935887336731,
+      "MdAE_std": 0.026321535794147127,
+      "best_epochs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "selected_hp": {
+    "dropout": 0.2,
+    "lr": 0.001
+  },
+  "cv": {
+    "hp": {
+      "dropout": 0.2,
+      "lr": 0.001
+    },
+    "fold_MAE": [
+      0.9419960844020049,
+      0.8658937454223633,
+      1.17284148534139,
+      1.3437211939086349,
+      1.056857760427362
+    ],
+    "fold_MdAE": [
+      0.5597720146179199,
+      0.4862707853317261,
+      0.5608378648757935,
+      0.638481855392456,
+      0.6633522510528564
+    ],
+    "MAE_mean": 1.076262053900351,
+    "MAE_std": 0.18942061697044202,
+    "MdAE_mean": 0.5817429542541503,
+    "MdAE_std": 0.07055859305486756,
+    "best_epochs": [
+      17,
+      7,
+      9,
+      9,
+      5
+    ]
+  },
+  "final_epochs": 9,
+  "test": {
+    "MAE": 9.58010655797385,
+    "MdAE": 2.4207279682159424
+  },
+  "baseline_median_test": {
+    "MAE": 9.411241830564013,
+    "MdAE": 2.0
+  },
+  "source_sp_median": 3.0,
+  "target_sp_median": 5.0,
+  "status": "done",
+  "runtime_sec": 6.6,
+  "env": {
+    "torch": "2.14.1+cpu",
+    "python": "3.13.18",
+    "device": "cpu"
+  },
+  "config": {
+    "seed": 42,
+    "data": {
+      "csv_path": "data/tawos_story_points.csv",
+      "pairs_path": "data/pairs.csv",
+      "columns": {
+        "id": "Issue_ID",
+        "project": "Project_Name",
+        "title": "Title",
+        "description": "Description_Text",
+        "created": "Creation_Date",
+        "story_point": "Story_Point"
+      },
+      "project_aliases": {
+        "C++ driver (MongoDB)": "The Mongo C++ driver",
+        "Evergreen": "The MongoDB Engineering",
+        "C++ driver (Appcelerator)": "Aptana Studio"
+      },
+      "max_story_point": 500,
+      "min_source_issues": 50,
+      "min_target_test_issues": 10
+    },
+    "split": {
+      "source_dev_fraction": 0.8,
+      "n_folds": 5,
+      "target_test_fraction": 0.2
+    },
+    "text": {
+      "max_tokens": 128
+    },
+    "embeddings": {
+      "backend": "hf",
+      "bert_model": "bert-base-uncased",
+      "bert_layer": -1,
+      "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "batch_size": 32,
+      "cache_dir": "/content/cache"
+    },
+    "model": {
+      "mode": "sbert",
+      "conv_channels": [
+        128,
+        128,
+        128
+      ],
+      "kernel_size": 3,
+      "sbert_proj_dim": 128,
+      "head_hidden": 128
+    },
+    "train": {
+      "max_epochs": 30,
+      "patience": 5,
+      "batch_size": 32,
+      "weight_decay": 0.0001,
+      "huber_delta": 1.0,
+      "grid": {
+        "lr": [
+          0.001,
+          0.0003
+        ],
+        "dropout": [
+          0.2,
+          0.4
+        ]
+      }
+    },
+    "output": {
+      "results_dir": "results"
+    },
+    "report": {
+      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)",
+      "group_members": [
+        "Member 1 name (roll no.)",
+        "Member 2 name (roll no.)"
+      ],
+      "github_url": "https://github.com/<your-username>/<your-repo>"
+    }
+  }
+}

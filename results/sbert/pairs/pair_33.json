@@ -1,0 +1,270 @@
+{
+  "pair_id": 33,
+  "train_project": "C++ driver (MongoDB)",
+  "test_project": "Java driver",
+  "train_project_tawos": "The Mongo C++ driver",
+  "test_project_tawos": "The Mongo Java driver",
+  "mode": "sbert",
+  "backend": "hf",
+  "n_source": 212,
+  "n_target_total": 238,
+  "n_source_dev": 170,
+  "n_target_test": 48,
+  "grid": [
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        0.4131684373406803,
+        0.41882606814889345,
+        0.49993158789242015,
+        0.4009866153492647,
+        0.7630987377727733
+      ],
+      "fold_MdAE": [
+        0.09078037738800049,
+        0.10919904708862305,
+        0.13258785009384155,
+        0.09988939762115479,
+        0.6030054092407227
+      ],
+      "MAE_mean": 0.49920228930080635,
+      "MAE_std": 0.15260270853761643,
+      "MdAE_mean": 0.20709241628646852,
+      "MdAE_std": 0.22186827043886134,
+      "best_epochs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        0.38808714992859783,
+        0.3739710905972649,
+        0.475526329349069,
+        0.37137627251007976,
+        0.7565886974334717
+      ],
+      "fold_MdAE": [
+        0.03936392068862915,
+        0.048062264919281006,
+        0.07714831829071045,
+        0.041028380393981934,
+        0.5517632961273193
+      ],
+      "MAE_mean": 0.47310990796369656,
+      "MAE_std": 0.16414412131331402,
+      "MdAE_mean": 0.15147323608398439,
+      "MdAE_std": 0.22428593317376228,
+      "best_epochs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        0.4089393230045543,
+        0.4101182257427889,
+        0.4930485241553363,
+        0.39609625059015613,
+        0.7615716807982501
+      ],
+      "fold_MdAE": [
+        0.08179730176925659,
+        0.09691005945205688,
+        0.11820715665817261,
+        0.09051597118377686,
+        0.5896589159965515
+      ],
+      "MAE_mean": 0.4939548008582172,
+      "MAE_std": 0.1544766280288367,
+      "MdAE_mean": 0.1954178810119629,
+      "MdAE_std": 0.22079703759475797,
+      "best_epochs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        0.3869321486529182,
+        0.37135844721513633,
+        0.47358054273268757,
+        0.3703031995717217,
+        0.7562190294265747
+      ],
+      "fold_MdAE": [
+        0.037275731563568115,
+        0.044730424880981445,
+        0.07302820682525635,
+        0.038351595401763916,
+        0.5478627681732178
+      ],
+      "MAE_mean": 0.47167867351980775,
+      "MAE_std": 0.16468905492403435,
+      "MdAE_mean": 0.14824974536895752,
+      "MdAE_std": 0.2238626435318221,
+      "best_epochs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "selected_hp": {
+    "dropout": 0.4,
+    "lr": 0.0003
+  },
+  "cv": {
+    "hp": {
+      "dropout": 0.4,
+      "lr": 0.0003
+    },
+    "fold_MAE": [
+      0.3869321486529182,
+      0.37135844721513633,
+      0.47358054273268757,
+      0.3703031995717217,
+      0.7562190294265747
+    ],
+    "fold_MdAE": [
+      0.037275731563568115,
+      0.044730424880981445,
+      0.07302820682525635,
+      0.038351595401763916,
+      0.5478627681732178
+    ],
+    "MAE_mean": 0.47167867351980775,
+    "MAE_std": 0.16468905492403435,
+    "MdAE_mean": 0.14824974536895752,
+    "MdAE_std": 0.2238626435318221,
+    "best_epochs": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "final_epochs": 1,
+  "test": {
+    "MAE": 0.07116333146890004,
+    "MdAE": 0.05183911323547363
+  },
+  "baseline_median_test": {
+    "MAE": 0.020833333333333332,
+    "MdAE": 0.0
+  },
+  "source_sp_median": 1.0,
+  "target_sp_median": 1.0,
+  "status": "done",
+  "runtime_sec": 2.2,
+  "env": {
+    "torch": "2.14.1+cpu",
+    "python": "3.13.18",
+    "device": "cpu"
+  },
+  "config": {
+    "seed": 42,
+    "data": {
+      "csv_path": "data/tawos_story_points.csv",
+      "pairs_path": "data/pairs.csv",
+      "columns": {
+        "id": "Issue_ID",
+        "project": "Project_Name",
+        "title": "Title",
+        "description": "Description_Text",
+        "created": "Creation_Date",
+        "story_point": "Story_Point"
+      },
+      "project_aliases": {
+        "C++ driver (MongoDB)": "The Mongo C++ driver",
+        "Evergreen": "The MongoDB Engineering",
+        "C++ driver (Appcelerator)": "Aptana Studio"
+      },
+      "max_story_point": 500,
+      "min_source_issues": 50,
+      "min_target_test_issues": 10
+    },
+    "split": {
+      "source_dev_fraction": 0.8,
+      "n_folds": 5,
+      "target_test_fraction": 0.2
+    },
+    "text": {
+      "max_tokens": 128
+    },
+    "embeddings": {
+      "backend": "hf",
+      "bert_model": "bert-base-uncased",
+      "bert_layer": -1,
+      "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "batch_size": 32,
+      "cache_dir": "/content/cache"
+    },
+    "model": {
+      "mode": "sbert",
+      "conv_channels": [
+        128,
+        128,
+        128
+      ],
+      "kernel_size": 3,
+      "sbert_proj_dim": 128,
+      "head_hidden": 128
+    },
+    "train": {
+      "max_epochs": 30,
+      "patience": 5,
+      "batch_size": 32,
+      "weight_decay": 0.0001,
+      "huber_delta": 1.0,
+      "grid": {
+        "lr": [
+          0.001,
+          0.0003
+        ],
+        "dropout": [
+          0.2,
+          0.4
+        ]
+      }
+    },
+    "output": {
+      "results_dir": "results"
+    },
+    "report": {
+      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)",
+      "group_members": [
+        "Member 1 name (roll no.)",
+        "Member 2 name (roll no.)"
+      ],
+      "github_url": "https://github.com/<your-username>/<your-repo>"
+    }
+  }
+}
