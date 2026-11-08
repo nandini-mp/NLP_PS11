@@ -1,0 +1,269 @@
+{
+  "pair_id": 36,
+  "train_project": "Atlassian Software Server",
+  "test_project": "Mule APIkit",
+  "train_project_tawos": "Atlassian Atlassian Software Server",
+  "test_project_tawos": "Mule APIkit",
+  "mode": "combined",
+  "backend": "hf",
+  "n_source": 326,
+  "n_target_total": 465,
+  "n_source_dev": 261,
+  "n_target_test": 93,
+  "grid": [
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        2.0907199832628356,
+        15.488837998646956,
+        1.7131225971075206,
+        2.3982795843711266,
+        2.0963437282122097
+      ],
+      "fold_MdAE": [
+        1.511610984802246,
+        1.5863338708877563,
+        1.1888201832771301,
+        1.2728694677352905,
+        1.5252429246902466
+      ],
+      "MAE_mean": 4.75746077832013,
+      "MAE_std": 6.003941170906385,
+      "MdAE_mean": 1.416975486278534,
+      "MdAE_std": 0.17477225545446196,
+      "best_epochs": [
+        14,
+        8,
+        17,
+        6,
+        7
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        2.2452374359346785,
+        15.443944142414974,
+        1.8345071719242976,
+        2.5159292817115784,
+        2.16959666288816
+      ],
+      "fold_MdAE": [
+        1.7405405044555664,
+        1.655806064605713,
+        1.5009829998016357,
+        1.1432666778564453,
+        1.8360612392425537
+      ],
+      "MAE_mean": 4.841842938974738,
+      "MAE_std": 5.931731471149245,
+      "MdAE_mean": 1.5753314971923829,
+      "MdAE_std": 0.2710894122069581,
+      "best_epochs": [
+        19,
+        11,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        2.1383496320472575,
+        15.492878835934858,
+        1.8108445726908171,
+        2.319611031275529,
+        2.054115896041577
+      ],
+      "fold_MdAE": [
+        1.4825739860534668,
+        1.2949576377868652,
+        1.580977439880371,
+        1.0467966794967651,
+        1.4489905834197998
+      ],
+      "MAE_mean": 4.763159993598007,
+      "MAE_std": 6.000885636054099,
+      "MdAE_mean": 1.3708592653274536,
+      "MdAE_std": 0.2082738255096949,
+      "best_epochs": [
+        20,
+        12,
+        9,
+        9,
+        7
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        2.340576990595404,
+        15.547230289532589,
+        1.8308069385015047,
+        2.511099480665647,
+        2.1658685207366943
+      ],
+      "fold_MdAE": [
+        1.6458840370178223,
+        1.5803650617599487,
+        1.4988082647323608,
+        1.1041752099990845,
+        1.8855170011520386
+      ],
+      "MAE_mean": 4.8791164440063675,
+      "MAE_std": 5.968966515461035,
+      "MdAE_mean": 1.542949914932251,
+      "MdAE_std": 0.2845255973696996,
+      "best_epochs": [
+        26,
+        11,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "selected_hp": {
+    "dropout": 0.2,
+    "lr": 0.001
+  },
+  "cv": {
+    "hp": {
+      "dropout": 0.2,
+      "lr": 0.001
+    },
+    "fold_MAE": [
+      2.0907199832628356,
+      15.488837998646956,
+      1.7131225971075206,
+      2.3982795843711266,
+      2.0963437282122097
+    ],
+    "fold_MdAE": [
+      1.511610984802246,
+      1.5863338708877563,
+      1.1888201832771301,
+      1.2728694677352905,
+      1.5252429246902466
+    ],
+    "MAE_mean": 4.75746077832013,
+    "MAE_std": 6.003941170906385,
+    "MdAE_mean": 1.416975486278534,
+    "MdAE_std": 0.17477225545446196,
+    "best_epochs": [
+      14,
+      8,
+      17,
+      6,
+      7
+    ]
+  },
+  "final_epochs": 8,
+  "test": {
+    "MAE": 1.8210990095651278,
+    "MdAE": 1.6950831413269043
+  },
+  "baseline_median_test": {
+    "MAE": 1.8387096774193548,
+    "MdAE": 2.0
+  },
+  "source_sp_median": 3.0,
+  "target_sp_median": 3.0,
+  "status": "done",
+  "runtime_sec": 48.8,
+  "env": {
+    "torch": "2.14.1+cu130",
+    "python": "3.13.16",
+    "device": "cuda"
+  },
+  "config": {
+    "seed": 42,
+    "data": {
+      "csv_path": "data/tawos_story_points.csv",
+      "pairs_path": "data/pairs.csv",
+      "columns": {
+        "id": "Issue_ID",
+        "project": "Project_Name",
+        "title": "Title",
+        "description": "Description_Text",
+        "created": "Creation_Date",
+        "story_point": "Story_Point"
+      },
+      "project_aliases": {
+        "C++ driver (MongoDB)": "The Mongo C++ driver",
+        "Evergreen": "The MongoDB Engineering",
+        "C++ driver (Appcelerator)": "Aptana Studio"
+      },
+      "min_source_issues": 50,
+      "min_target_test_issues": 10
+    },
+    "split": {
+      "source_dev_fraction": 0.8,
+      "n_folds": 5,
+      "target_test_fraction": 0.2
+    },
+    "text": {
+      "max_tokens": 128
+    },
+    "embeddings": {
+      "backend": "hf",
+      "bert_model": "bert-base-uncased",
+      "bert_layer": -1,
+      "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "batch_size": 32,
+      "cache_dir": "/content/cache"
+    },
+    "model": {
+      "mode": "combined",
+      "conv_channels": [
+        128,
+        128,
+        128
+      ],
+      "kernel_size": 3,
+      "sbert_proj_dim": 128,
+      "head_hidden": 128
+    },
+    "train": {
+      "max_epochs": 30,
+      "patience": 5,
+      "batch_size": 32,
+      "weight_decay": 0.0001,
+      "huber_delta": 1.0,
+      "grid": {
+        "lr": [
+          0.001,
+          0.0003
+        ],
+        "dropout": [
+          0.2,
+          0.4
+        ]
+      }
+    },
+    "output": {
+      "results_dir": "results"
+    },
+    "report": {
+      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)",
+      "group_members": [
+        "Member 1 name (roll no.)",
+        "Member 2 name (roll no.)"
+      ],
+      "github_url": "https://github.com/<your-username>/<your-repo>"
+    }
+  }
+}

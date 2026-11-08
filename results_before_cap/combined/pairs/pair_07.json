@@ -1,0 +1,269 @@
+{
+  "pair_id": 7,
+  "train_project": "Nexus",
+  "test_project": "Command-Line Interface",
+  "train_project_tawos": "Sonatype Nexus",
+  "test_project_tawos": "Command-Line Interface",
+  "mode": "combined",
+  "backend": "hf",
+  "n_source": 1804,
+  "n_target_total": 357,
+  "n_source_dev": 1443,
+  "n_target_test": 71,
+  "grid": [
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        0.9562349921691788,
+        0.8113546460145072,
+        0.8584621084602646,
+        0.8326968269991792,
+        1.1143956979115803
+      ],
+      "fold_MdAE": [
+        0.48147791624069214,
+        0.5381160974502563,
+        0.4707672595977783,
+        0.5035878419876099,
+        0.5674408674240112
+      ],
+      "MAE_mean": 0.9146288543109421,
+      "MAE_std": 0.1246705509009304,
+      "MdAE_mean": 0.5122779965400696,
+      "MdAE_std": 0.040180389485697035,
+      "best_epochs": [
+        2,
+        3,
+        7,
+        6,
+        8
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        0.9562344412902647,
+        0.7824116161537831,
+        0.8589525024783653,
+        0.829596035880968,
+        1.1024703081283305
+      ],
+      "fold_MdAE": [
+        0.5520353317260742,
+        0.4693727493286133,
+        0.4471275806427002,
+        0.46338048577308655,
+        0.5223503708839417
+      ],
+      "MAE_mean": 0.9059329807863422,
+      "MAE_std": 0.1269342152335035,
+      "MdAE_mean": 0.4908533036708832,
+      "MdAE_std": 0.044337948171978434,
+      "best_epochs": [
+        5,
+        13,
+        11,
+        8,
+        9
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        0.954318280244781,
+        0.8008664867044732,
+        0.841645756188561,
+        0.8174760940536443,
+        1.1129172382255395
+      ],
+      "fold_MdAE": [
+        0.5592094659805298,
+        0.5101743936538696,
+        0.4310470223426819,
+        0.44359877705574036,
+        0.5200971364974976
+      ],
+      "MAE_mean": 0.9054447710833997,
+      "MAE_std": 0.13055541402346243,
+      "MdAE_mean": 0.49282535910606384,
+      "MdAE_std": 0.05406340666512898,
+      "best_epochs": [
+        3,
+        7,
+        12,
+        9,
+        10
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        0.9581224114012141,
+        0.7955431373061606,
+        0.8665796095524693,
+        0.8258365821869423,
+        1.1091418949266274
+      ],
+      "fold_MdAE": [
+        0.5566465854644775,
+        0.49984627962112427,
+        0.4535489082336426,
+        0.5281391739845276,
+        0.5011993050575256
+      ],
+      "MAE_mean": 0.9110447270746829,
+      "MAE_std": 0.1265276532452891,
+      "MdAE_mean": 0.5078760504722595,
+      "MdAE_std": 0.03824151471558894,
+      "best_epochs": [
+        6,
+        11,
+        16,
+        11,
+        10
+      ]
+    }
+  ],
+  "selected_hp": {
+    "dropout": 0.4,
+    "lr": 0.001
+  },
+  "cv": {
+    "hp": {
+      "dropout": 0.4,
+      "lr": 0.001
+    },
+    "fold_MAE": [
+      0.954318280244781,
+      0.8008664867044732,
+      0.841645756188561,
+      0.8174760940536443,
+      1.1129172382255395
+    ],
+    "fold_MdAE": [
+      0.5592094659805298,
+      0.5101743936538696,
+      0.4310470223426819,
+      0.44359877705574036,
+      0.5200971364974976
+    ],
+    "MAE_mean": 0.9054447710833997,
+    "MAE_std": 0.13055541402346243,
+    "MdAE_mean": 0.49282535910606384,
+    "MdAE_std": 0.05406340666512898,
+    "best_epochs": [
+      3,
+      7,
+      12,
+      9,
+      10
+    ]
+  },
+  "final_epochs": 9,
+  "test": {
+    "MAE": 3.051603031830049,
+    "MdAE": 2.0964033603668213
+  },
+  "baseline_median_test": {
+    "MAE": 3.1971830985915495,
+    "MdAE": 2.0
+  },
+  "source_sp_median": 1.0,
+  "target_sp_median": 3.0,
+  "status": "done",
+  "runtime_sec": 272.5,
+  "env": {
+    "torch": "2.14.1+cu130",
+    "python": "3.13.16",
+    "device": "cuda"
+  },
+  "config": {
+    "seed": 42,
+    "data": {
+      "csv_path": "data/tawos_story_points.csv",
+      "pairs_path": "data/pairs.csv",
+      "columns": {
+        "id": "Issue_ID",
+        "project": "Project_Name",
+        "title": "Title",
+        "description": "Description_Text",
+        "created": "Creation_Date",
+        "story_point": "Story_Point"
+      },
+      "project_aliases": {
+        "C++ driver (MongoDB)": "The Mongo C++ driver",
+        "Evergreen": "The MongoDB Engineering",
+        "C++ driver (Appcelerator)": "Aptana Studio"
+      },
+      "min_source_issues": 50,
+      "min_target_test_issues": 10
+    },
+    "split": {
+      "source_dev_fraction": 0.8,
+      "n_folds": 5,
+      "target_test_fraction": 0.2
+    },
+    "text": {
+      "max_tokens": 128
+    },
+    "embeddings": {
+      "backend": "hf",
+      "bert_model": "bert-base-uncased",
+      "bert_layer": -1,
+      "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "batch_size": 32,
+      "cache_dir": "/content/cache"
+    },
+    "model": {
+      "mode": "combined",
+      "conv_channels": [
+        128,
+        128,
+        128
+      ],
+      "kernel_size": 3,
+      "sbert_proj_dim": 128,
+      "head_hidden": 128
+    },
+    "train": {
+      "max_epochs": 30,
+      "patience": 5,
+      "batch_size": 32,
+      "weight_decay": 0.0001,
+      "huber_delta": 1.0,
+      "grid": {
+        "lr": [
+          0.001,
+          0.0003
+        ],
+        "dropout": [
+          0.2,
+          0.4
+        ]
+      }
+    },
+    "output": {
+      "results_dir": "results"
+    },
+    "report": {
+      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)",
+      "group_members": [
+        "Member 1 name (roll no.)",
+        "Member 2 name (roll no.)"
+      ],
+      "github_url": "https://github.com/<your-username>/<your-repo>"
+    }
+  }
+}
