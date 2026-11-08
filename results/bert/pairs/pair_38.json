@@ -259,12 +259,7 @@
       "results_dir": "results"
     },
     "report": {
-      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)",
-      "group_members": [
-        "Member 1 name (roll no.)",
-        "Member 2 name (roll no.)"
-      ],
-      "github_url": "https://github.com/<your-username>/<your-repo>"
+      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)"
     }
   }
 }
