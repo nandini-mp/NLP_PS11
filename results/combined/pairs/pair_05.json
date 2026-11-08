@@ -1,0 +1,270 @@
+{
+  "pair_id": 5,
+  "train_project": "Software Cloud",
+  "test_project": "Appcelerator Daemon",
+  "train_project_tawos": "Atlassian Software Cloud",
+  "test_project_tawos": "Appcelerator Daemon",
+  "mode": "combined",
+  "backend": "hf",
+  "n_source": 295,
+  "n_target_total": 242,
+  "n_source_dev": 236,
+  "n_target_test": 48,
+  "grid": [
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        2.3113018622001014,
+        1.6911677350389196,
+        1.8096358116636886,
+        2.5696439540132565,
+        1.4466405878675745
+      ],
+      "fold_MdAE": [
+        1.363537311553955,
+        1.1252331733703613,
+        1.3465607166290283,
+        1.7002835273742676,
+        1.2298078536987305
+      ],
+      "MAE_mean": 1.9656779901567076,
+      "MAE_std": 0.46188083231288407,
+      "MdAE_mean": 1.3530845165252685,
+      "MdAE_std": 0.2166866079149012,
+      "best_epochs": [
+        11,
+        20,
+        14,
+        25,
+        8
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        2.3585560023784637,
+        2.0305687671012067,
+        1.845651514986728,
+        2.708774835505384,
+        1.553472082665626
+      ],
+      "fold_MdAE": [
+        1.1949222087860107,
+        1.0757319927215576,
+        1.4087843894958496,
+        1.7999114990234375,
+        1.2448041439056396
+      ],
+      "MAE_mean": 2.099404640527482,
+      "MAE_std": 0.44879361815935875,
+      "MdAE_mean": 1.3448308467864991,
+      "MdAE_std": 0.28110522494295437,
+      "best_epochs": [
+        11,
+        1,
+        14,
+        13,
+        8
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        2.3923537830511727,
+        1.7830694888500458,
+        1.7545929056532839,
+        2.5041507457165006,
+        1.4305461366125878
+      ],
+      "fold_MdAE": [
+        1.1562144756317139,
+        1.2926709651947021,
+        1.2440714836120605,
+        1.5438957214355469,
+        1.1273574829101562
+      ],
+      "MAE_mean": 1.972942611976718,
+      "MAE_std": 0.45716795201495325,
+      "MdAE_mean": 1.272842025756836,
+      "MdAE_std": 0.16542277241292788,
+      "best_epochs": [
+        9,
+        20,
+        22,
+        28,
+        12
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        2.387585868438085,
+        2.0298255504445826,
+        1.911971503115715,
+        2.586325447610084,
+        1.4514790139299758
+      ],
+      "fold_MdAE": [
+        1.146628499031067,
+        1.0650742053985596,
+        1.2634012699127197,
+        2.041292190551758,
+        1.3195996284484863
+      ],
+      "MAE_mean": 2.0734374767076886,
+      "MAE_std": 0.44061005233776984,
+      "MdAE_mean": 1.3671991586685182,
+      "MdAE_std": 0.38967038503783624,
+      "best_epochs": [
+        18,
+        1,
+        17,
+        30,
+        16
+      ]
+    }
+  ],
+  "selected_hp": {
+    "dropout": 0.2,
+    "lr": 0.001
+  },
+  "cv": {
+    "hp": {
+      "dropout": 0.2,
+      "lr": 0.001
+    },
+    "fold_MAE": [
+      2.3113018622001014,
+      1.6911677350389196,
+      1.8096358116636886,
+      2.5696439540132565,
+      1.4466405878675745
+    ],
+    "fold_MdAE": [
+      1.363537311553955,
+      1.1252331733703613,
+      1.3465607166290283,
+      1.7002835273742676,
+      1.2298078536987305
+    ],
+    "MAE_mean": 1.9656779901567076,
+    "MAE_std": 0.46188083231288407,
+    "MdAE_mean": 1.3530845165252685,
+    "MdAE_std": 0.2166866079149012,
+    "best_epochs": [
+      11,
+      20,
+      14,
+      25,
+      8
+    ]
+  },
+  "final_epochs": 14,
+  "test": {
+    "MAE": 4.946029866735141,
+    "MdAE": 3.0160763263702393
+  },
+  "baseline_median_test": {
+    "MAE": 4.875,
+    "MdAE": 3.5
+  },
+  "source_sp_median": 4.0,
+  "target_sp_median": 6.5,
+  "status": "done",
+  "runtime_sec": 71.4,
+  "env": {
+    "torch": "2.14.1+cu130",
+    "python": "3.13.16",
+    "device": "cuda"
+  },
+  "config": {
+    "seed": 42,
+    "data": {
+      "csv_path": "data/tawos_story_points.csv",
+      "pairs_path": "data/pairs.csv",
+      "columns": {
+        "id": "Issue_ID",
+        "project": "Project_Name",
+        "title": "Title",
+        "description": "Description_Text",
+        "created": "Creation_Date",
+        "story_point": "Story_Point"
+      },
+      "project_aliases": {
+        "C++ driver (MongoDB)": "The Mongo C++ driver",
+        "Evergreen": "The MongoDB Engineering",
+        "C++ driver (Appcelerator)": "Aptana Studio"
+      },
+      "max_story_point": 500,
+      "min_source_issues": 50,
+      "min_target_test_issues": 10
+    },
+    "split": {
+      "source_dev_fraction": 0.8,
+      "n_folds": 5,
+      "target_test_fraction": 0.2
+    },
+    "text": {
+      "max_tokens": 128
+    },
+    "embeddings": {
+      "backend": "hf",
+      "bert_model": "bert-base-uncased",
+      "bert_layer": -1,
+      "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "batch_size": 32,
+      "cache_dir": "/content/cache"
+    },
+    "model": {
+      "mode": "combined",
+      "conv_channels": [
+        128,
+        128,
+        128
+      ],
+      "kernel_size": 3,
+      "sbert_proj_dim": 128,
+      "head_hidden": 128
+    },
+    "train": {
+      "max_epochs": 30,
+      "patience": 5,
+      "batch_size": 32,
+      "weight_decay": 0.0001,
+      "huber_delta": 1.0,
+      "grid": {
+        "lr": [
+          0.001,
+          0.0003
+        ],
+        "dropout": [
+          0.2,
+          0.4
+        ]
+      }
+    },
+    "output": {
+      "results_dir": "results"
+    },
+    "report": {
+      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)",
+      "group_members": [
+        "Member 1 name (roll no.)",
+        "Member 2 name (roll no.)"
+      ],
+      "github_url": "https://github.com/<your-username>/<your-repo>"
+    }
+  }
+}

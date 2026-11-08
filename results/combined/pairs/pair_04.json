@@ -1,0 +1,270 @@
+{
+  "pair_id": 4,
+  "train_project": "The Titanium SDK",
+  "test_project": "Alloy Framework",
+  "train_project_tawos": "The Titanium SDK ",
+  "test_project_tawos": "Alloy Framework",
+  "mode": "combined",
+  "backend": "hf",
+  "n_source": 4421,
+  "n_target_total": 303,
+  "n_source_dev": 3537,
+  "n_target_test": 61,
+  "grid": [
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        3.3290087311281322,
+        3.244397094020736,
+        2.872059817024134,
+        3.169285408678284,
+        3.0714892700335596
+      ],
+      "fold_MdAE": [
+        1.7658655643463135,
+        1.688581109046936,
+        1.7701950073242188,
+        1.896474838256836,
+        1.7585718631744385
+      ],
+      "MAE_mean": 3.137248064176969,
+      "MAE_std": 0.17601738895908822,
+      "MdAE_mean": 1.7759376764297485,
+      "MdAE_std": 0.07516045237778393,
+      "best_epochs": [
+        8,
+        7,
+        6,
+        10,
+        8
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        3.3976729559359575,
+        3.1964706899756092,
+        2.8619405562334723,
+        3.1592944319211105,
+        3.0839522761705065
+      ],
+      "fold_MdAE": [
+        1.70835280418396,
+        1.7810888290405273,
+        1.687450885772705,
+        1.8015236854553223,
+        1.8589134216308594
+      ],
+      "MAE_mean": 3.1398661820473315,
+      "MAE_std": 0.19391678513491897,
+      "MdAE_mean": 1.767465925216675,
+      "MdAE_std": 0.0700087972274518,
+      "best_epochs": [
+        10,
+        7,
+        11,
+        11,
+        14
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        3.3926269459185625,
+        3.1908651876584284,
+        2.901124988957881,
+        3.166667077632402,
+        3.051138456336511
+      ],
+      "fold_MdAE": [
+        1.866830825805664,
+        1.7424006462097168,
+        1.7804946899414062,
+        1.8388738632202148,
+        1.7194194793701172
+      ],
+      "MAE_mean": 3.140484531300757,
+      "MAE_std": 0.18171079022642234,
+      "MdAE_mean": 1.7896039009094238,
+      "MdAE_std": 0.06250700984799355,
+      "best_epochs": [
+        7,
+        13,
+        13,
+        8,
+        10
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        3.379334908757506,
+        3.241117186802255,
+        2.913272134654087,
+        3.1874130463498993,
+        3.118501185696398
+      ],
+      "fold_MdAE": [
+        1.7250434160232544,
+        1.7746527194976807,
+        1.707439661026001,
+        1.9395623207092285,
+        1.8820164203643799
+      ],
+      "MAE_mean": 3.1679276924520297,
+      "MAE_std": 0.17155307115674379,
+      "MdAE_mean": 1.805742907524109,
+      "MdAE_std": 0.10107895440976779,
+      "best_epochs": [
+        13,
+        14,
+        8,
+        11,
+        10
+      ]
+    }
+  ],
+  "selected_hp": {
+    "dropout": 0.2,
+    "lr": 0.001
+  },
+  "cv": {
+    "hp": {
+      "dropout": 0.2,
+      "lr": 0.001
+    },
+    "fold_MAE": [
+      3.3290087311281322,
+      3.244397094020736,
+      2.872059817024134,
+      3.169285408678284,
+      3.0714892700335596
+    ],
+    "fold_MdAE": [
+      1.7658655643463135,
+      1.688581109046936,
+      1.7701950073242188,
+      1.896474838256836,
+      1.7585718631744385
+    ],
+    "MAE_mean": 3.137248064176969,
+    "MAE_std": 0.17601738895908822,
+    "MdAE_mean": 1.7759376764297485,
+    "MdAE_std": 0.07516045237778393,
+    "best_epochs": [
+      8,
+      7,
+      6,
+      10,
+      8
+    ]
+  },
+  "final_epochs": 8,
+  "test": {
+    "MAE": 2.147903227415241,
+    "MdAE": 1.6828107833862305
+  },
+  "baseline_median_test": {
+    "MAE": 2.0,
+    "MdAE": 2.0
+  },
+  "source_sp_median": 5.0,
+  "target_sp_median": 3.0,
+  "status": "done",
+  "runtime_sec": 738.2,
+  "env": {
+    "torch": "2.14.1+cu130",
+    "python": "3.13.16",
+    "device": "cuda"
+  },
+  "config": {
+    "seed": 42,
+    "data": {
+      "csv_path": "data/tawos_story_points.csv",
+      "pairs_path": "data/pairs.csv",
+      "columns": {
+        "id": "Issue_ID",
+        "project": "Project_Name",
+        "title": "Title",
+        "description": "Description_Text",
+        "created": "Creation_Date",
+        "story_point": "Story_Point"
+      },
+      "project_aliases": {
+        "C++ driver (MongoDB)": "The Mongo C++ driver",
+        "Evergreen": "The MongoDB Engineering",
+        "C++ driver (Appcelerator)": "Aptana Studio"
+      },
+      "max_story_point": 500,
+      "min_source_issues": 50,
+      "min_target_test_issues": 10
+    },
+    "split": {
+      "source_dev_fraction": 0.8,
+      "n_folds": 5,
+      "target_test_fraction": 0.2
+    },
+    "text": {
+      "max_tokens": 128
+    },
+    "embeddings": {
+      "backend": "hf",
+      "bert_model": "bert-base-uncased",
+      "bert_layer": -1,
+      "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "batch_size": 32,
+      "cache_dir": "/content/cache"
+    },
+    "model": {
+      "mode": "combined",
+      "conv_channels": [
+        128,
+        128,
+        128
+      ],
+      "kernel_size": 3,
+      "sbert_proj_dim": 128,
+      "head_hidden": 128
+    },
+    "train": {
+      "max_epochs": 30,
+      "patience": 5,
+      "batch_size": 32,
+      "weight_decay": 0.0001,
+      "huber_delta": 1.0,
+      "grid": {
+        "lr": [
+          0.001,
+          0.0003
+        ],
+        "dropout": [
+          0.2,
+          0.4
+        ]
+      }
+    },
+    "output": {
+      "results_dir": "results"
+    },
+    "report": {
+      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)",
+      "group_members": [
+        "Member 1 name (roll no.)",
+        "Member 2 name (roll no.)"
+      ],
+      "github_url": "https://github.com/<your-username>/<your-repo>"
+    }
+  }
+}
