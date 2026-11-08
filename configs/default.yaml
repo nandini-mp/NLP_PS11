@@ -1,0 +1,72 @@
+# Project 11: combined BERT (word-level) + SBERT (sentence-level) embeddings,
+# cross-project setting, random split.
+# Every setting that affects results lives here. Nothing is hidden in code.
+
+seed: 42                      # master seed (splits, torch, numpy, python)
+
+data:
+  csv_path: data/tawos_story_points.csv   # produced by src/export_tawos.py
+  pairs_path: data/pairs.csv
+  # Column names inside the CSV. Edit if your export uses other names.
+  columns:
+    id: Issue_ID
+    project: Project_Name
+    title: Title
+    description: Description_Text
+    created: Creation_Date
+    story_point: Story_Point
+  # Project names in pairs.csv are the short names from the assignment sheet.
+  # If a name does not match a TAWOS project automatically, map it here:
+  #   "Short name in pairs.csv": "Exact name in TAWOS"
+  project_aliases:
+    "C++ driver (MongoDB)": "The Mongo C++ driver"
+    "Evergreen": "The MongoDB Engineering"
+    "C++ driver (Appcelerator)": "Aptana Studio"
+  max_story_point: 500
+  min_source_issues: 50       # a pair is skipped (and reported) below this
+  min_target_test_issues: 10  # ... or if the target test set is smaller than this
+
+split:
+  # Random split protocol for cross-project estimation (guideline 3.2, README section 4):
+  #   development data = random source_dev_fraction (80%) of the SOURCE project
+  #                      -> 5-fold random CV for validation / model selection
+  #   final test data  = random target_test_fraction (20%) of the TARGET project
+  #   Everything else is never used. Set source_dev_fraction: 1.0 to use all source data.
+  source_dev_fraction: 0.8
+  n_folds: 5
+  target_test_fraction: 0.20  # set to 1.0 to test on the whole target project
+
+text:
+  max_tokens: 128             # BERT max sequence length (truncation)
+
+embeddings:
+  backend: hf                 # "hf" = real BERT + SBERT. "hash" = smoke tests ONLY.
+  bert_model: bert-base-uncased
+  bert_layer: -1              # which hidden layer to use (-1 = last)
+  sbert_model: sentence-transformers/all-MiniLM-L6-v2
+  batch_size: 32
+  cache_dir: cache
+
+model:
+  mode: combined              # bert | sbert | combined   (project 11 = combined)
+  conv_channels: [128, 128, 128]   # three 1-D conv layers
+  kernel_size: 3
+  sbert_proj_dim: 128
+  head_hidden: 128
+
+train:
+  max_epochs: 30
+  patience: 5                 # early stopping on validation MAE
+  batch_size: 32
+  weight_decay: 0.0001
+  huber_delta: 1.0
+  # Hyper-parameter grid: all combinations are scored by mean 5-fold validation MAE
+  grid:
+    lr: [0.001, 0.0003]
+    dropout: [0.2, 0.4]
+
+output:
+  results_dir: results
+
+report:
+  title: "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)"

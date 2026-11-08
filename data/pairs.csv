@@ -1,0 +1,40 @@
+pair_id,train_project,test_project
+1,XD,MESOS
+2,Usergrid,MXNet
+3,Titanium Mobile Platform,Usergrid
+4,The Titanium SDK,Alloy Framework
+5,Software Cloud,Appcelerator Daemon
+6,Sawtooth,Appcelerator Studio
+7,Nexus,Command-Line Interface
+8,MXNet,The Titanium SDK
+9,Mule APIkit,Titanium Mobile Platform
+10,Mule,C++ driver (Appcelerator)
+11,Moodle,Atlassian Software Server
+12,MongoDB Core Server,Bamboo
+13,MESOS,Clover
+14,Lyrasis Dura Cloud,Confluence Cloud
+15,Lsstcorp Data management,Confluence Server
+16,Jira Server,Crowd
+17,Jira Cloud,FishEye
+18,Java driver,Jira Cloud
+19,Indy SDK,Jira Server
+20,Indy Node,Software Cloud
+21,FishEye,DotNetNuke Platform
+22,Fabric,Blockchain Explorer
+23,Evergreen,Fabric
+24,DotNetNuke Platform,Indy Node
+25,DataCass,Indy SDK
+26,Crowd,Sawtooth
+27,Confluence Server,Lsstcorp Data management
+28,Confluence Cloud,Lyrasis Dura Cloud
+29,Compass,MongoDB Core Server
+30,Command-Line Interface,Compass
+31,Clover,C++ driver (MongoDB)
+32,C++ driver (Appcelerator),Evergreen
+33,C++ driver (MongoDB),Java driver
+34,Blockchain Explorer,Moodle
+35,Bamboo,Mule
+36,Atlassian Software Server,Mule APIkit
+37,Appcelerator Studio,Nexus
+38,Appcelerator Daemon,DataCass
+39,Alloy Framework,XD
