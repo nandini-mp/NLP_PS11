@@ -1,0 +1,270 @@
+{
+  "pair_id": 22,
+  "train_project": "Fabric",
+  "test_project": "Blockchain Explorer",
+  "train_project_tawos": "Hyperledger Fabric",
+  "test_project_tawos": "Hyperledger Blockchain Explorer",
+  "mode": "bert",
+  "backend": "hf",
+  "n_source": 627,
+  "n_target_total": 372,
+  "n_source_dev": 502,
+  "n_target_test": 74,
+  "grid": [
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        1.8070899791056567,
+        0.9486881518127894,
+        1.4543395447731018,
+        1.4072215402126311,
+        1.2507335805892945
+      ],
+      "fold_MdAE": [
+        0.5499683618545532,
+        0.5461173057556152,
+        0.5432115793228149,
+        0.5962865948677063,
+        0.536666750907898
+      ],
+      "MAE_mean": 1.3736145592986946,
+      "MAE_std": 0.3127335442234621,
+      "MdAE_mean": 0.5544501185417176,
+      "MdAE_std": 0.02388705502715113,
+      "best_epochs": [
+        9,
+        7,
+        6,
+        12,
+        14
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        1.685840643278443,
+        0.9889055490493774,
+        1.4711064016819,
+        1.4154033052921295,
+        1.2630124163627625
+      ],
+      "fold_MdAE": [
+        0.442287802696228,
+        0.5637893676757812,
+        0.5445654392242432,
+        0.6325488090515137,
+        0.5477587580680847
+      ],
+      "MAE_mean": 1.3648536631329224,
+      "MAE_std": 0.25912650203192106,
+      "MdAE_mean": 0.5461900353431701,
+      "MdAE_std": 0.06813286367003657,
+      "best_epochs": [
+        30,
+        8,
+        12,
+        12,
+        10
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        1.8166852540308887,
+        1.0550636241931726,
+        1.4964502787590026,
+        1.466443704366684,
+        1.2828333067893982
+      ],
+      "fold_MdAE": [
+        0.662276029586792,
+        0.6746619939804077,
+        0.6055448651313782,
+        0.7262112498283386,
+        0.6850936412811279
+      ],
+      "MAE_mean": 1.4234952336278293,
+      "MAE_std": 0.28164384885257465,
+      "MdAE_mean": 0.6707575559616089,
+      "MdAE_std": 0.04364777049564537,
+      "best_epochs": [
+        12,
+        7,
+        8,
+        12,
+        8
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        1.8696136132325276,
+        1.0741674003034536,
+        1.5444670343399047,
+        1.4831633019447326,
+        1.2754006445407868
+      ],
+      "fold_MdAE": [
+        0.6026597023010254,
+        0.7391657829284668,
+        0.6873588562011719,
+        0.6881997585296631,
+        0.6052628755569458
+      ],
+      "MAE_mean": 1.449362398872281,
+      "MAE_std": 0.29909549262248936,
+      "MdAE_mean": 0.6645293951034545,
+      "MdAE_std": 0.05914482228591585,
+      "best_epochs": [
+        19,
+        8,
+        15,
+        23,
+        11
+      ]
+    }
+  ],
+  "selected_hp": {
+    "dropout": 0.2,
+    "lr": 0.0003
+  },
+  "cv": {
+    "hp": {
+      "dropout": 0.2,
+      "lr": 0.0003
+    },
+    "fold_MAE": [
+      1.685840643278443,
+      0.9889055490493774,
+      1.4711064016819,
+      1.4154033052921295,
+      1.2630124163627625
+    ],
+    "fold_MdAE": [
+      0.442287802696228,
+      0.5637893676757812,
+      0.5445654392242432,
+      0.6325488090515137,
+      0.5477587580680847
+    ],
+    "MAE_mean": 1.3648536631329224,
+    "MAE_std": 0.25912650203192106,
+    "MdAE_mean": 0.5461900353431701,
+    "MdAE_std": 0.06813286367003657,
+    "best_epochs": [
+      30,
+      8,
+      12,
+      12,
+      10
+    ]
+  },
+  "final_epochs": 12,
+  "test": {
+    "MAE": 1.4008010040867973,
+    "MdAE": 1.1244028806686401
+  },
+  "baseline_median_test": {
+    "MAE": 1.3594594592782292,
+    "MdAE": 1.0
+  },
+  "source_sp_median": 2.0,
+  "target_sp_median": 3.0,
+  "status": "done",
+  "runtime_sec": 132.0,
+  "env": {
+    "torch": "2.14.1+cu130",
+    "python": "3.13.16",
+    "device": "cuda"
+  },
+  "config": {
+    "seed": 42,
+    "data": {
+      "csv_path": "data/tawos_story_points.csv",
+      "pairs_path": "data/pairs.csv",
+      "columns": {
+        "id": "Issue_ID",
+        "project": "Project_Name",
+        "title": "Title",
+        "description": "Description_Text",
+        "created": "Creation_Date",
+        "story_point": "Story_Point"
+      },
+      "project_aliases": {
+        "C++ driver (MongoDB)": "The Mongo C++ driver",
+        "Evergreen": "The MongoDB Engineering",
+        "C++ driver (Appcelerator)": "Aptana Studio"
+      },
+      "max_story_point": 500,
+      "min_source_issues": 50,
+      "min_target_test_issues": 10
+    },
+    "split": {
+      "source_dev_fraction": 0.8,
+      "n_folds": 5,
+      "target_test_fraction": 0.2
+    },
+    "text": {
+      "max_tokens": 128
+    },
+    "embeddings": {
+      "backend": "hf",
+      "bert_model": "bert-base-uncased",
+      "bert_layer": -1,
+      "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "batch_size": 32,
+      "cache_dir": "/content/cache"
+    },
+    "model": {
+      "mode": "bert",
+      "conv_channels": [
+        128,
+        128,
+        128
+      ],
+      "kernel_size": 3,
+      "sbert_proj_dim": 128,
+      "head_hidden": 128
+    },
+    "train": {
+      "max_epochs": 30,
+      "patience": 5,
+      "batch_size": 32,
+      "weight_decay": 0.0001,
+      "huber_delta": 1.0,
+      "grid": {
+        "lr": [
+          0.001,
+          0.0003
+        ],
+        "dropout": [
+          0.2,
+          0.4
+        ]
+      }
+    },
+    "output": {
+      "results_dir": "results"
+    },
+    "report": {
+      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)",
+      "group_members": [
+        "Member 1 name (roll no.)",
+        "Member 2 name (roll no.)"
+      ],
+      "github_url": "https://github.com/<your-username>/<your-repo>"
+    }
+  }
+}

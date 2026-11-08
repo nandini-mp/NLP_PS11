@@ -1,0 +1,270 @@
+{
+  "pair_id": 28,
+  "train_project": "Confluence Cloud",
+  "test_project": "Lyrasis Dura Cloud",
+  "train_project_tawos": "Atlassian Confluence Cloud",
+  "test_project_tawos": "Lyrasis Dura Cloud",
+  "mode": "bert",
+  "backend": "hf",
+  "n_source": 340,
+  "n_target_total": 657,
+  "n_source_dev": 272,
+  "n_target_test": 131,
+  "grid": [
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        0.9643619797446511,
+        1.5826540318402378,
+        1.2596166420865942,
+        1.263902121120029,
+        0.9225839773813883
+      ],
+      "fold_MdAE": [
+        0.5553195476531982,
+        0.8198246955871582,
+        0.8181225061416626,
+        0.7152481079101562,
+        0.44187402725219727
+      ],
+      "MAE_mean": 1.19862375043458,
+      "MAE_std": 0.2676458429819004,
+      "MdAE_mean": 0.6700777769088745,
+      "MdAE_std": 0.16705399041124486,
+      "best_epochs": [
+        12,
+        14,
+        8,
+        7,
+        10
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        1.0076020804318515,
+        1.5947227239608766,
+        1.3240279268335413,
+        1.272740611323604,
+        0.974558483671259
+      ],
+      "fold_MdAE": [
+        0.6123945713043213,
+        0.9994544982910156,
+        0.9372649192810059,
+        0.6455553770065308,
+        0.5788720846176147
+      ],
+      "MAE_mean": 1.2347303652442263,
+      "MAE_std": 0.2541111948390995,
+      "MdAE_mean": 0.7547082901000977,
+      "MdAE_std": 0.19768254439536437,
+      "best_epochs": [
+        11,
+        19,
+        1,
+        11,
+        12
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        0.9868800163269043,
+        1.6842489936135032,
+        1.2399971021546259,
+        1.251899485234861,
+        0.9895399897186844
+      ],
+      "fold_MdAE": [
+        0.4959526062011719,
+        0.7756762504577637,
+        0.6134861707687378,
+        0.8497434854507446,
+        0.589989185333252
+      ],
+      "MAE_mean": 1.2305131174097157,
+      "MAE_std": 0.2845385317765585,
+      "MdAE_mean": 0.664969539642334,
+      "MdAE_std": 0.14425385736777122,
+      "best_epochs": [
+        18,
+        10,
+        23,
+        27,
+        15
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        0.9650692159479315,
+        1.5341825398531828,
+        1.3181820842954848,
+        1.3018082159536857,
+        0.9469095865885416
+      ],
+      "fold_MdAE": [
+        0.4815256595611572,
+        0.9903147220611572,
+        0.9771476984024048,
+        0.6985011100769043,
+        0.5566419363021851
+      ],
+      "MAE_mean": 1.2132303285277652,
+      "MAE_std": 0.25218143791631503,
+      "MdAE_mean": 0.7408262252807617,
+      "MdAE_std": 0.23507679582967958,
+      "best_epochs": [
+        23,
+        30,
+        1,
+        14,
+        24
+      ]
+    }
+  ],
+  "selected_hp": {
+    "dropout": 0.2,
+    "lr": 0.001
+  },
+  "cv": {
+    "hp": {
+      "dropout": 0.2,
+      "lr": 0.001
+    },
+    "fold_MAE": [
+      0.9643619797446511,
+      1.5826540318402378,
+      1.2596166420865942,
+      1.263902121120029,
+      0.9225839773813883
+    ],
+    "fold_MdAE": [
+      0.5553195476531982,
+      0.8198246955871582,
+      0.8181225061416626,
+      0.7152481079101562,
+      0.44187402725219727
+    ],
+    "MAE_mean": 1.19862375043458,
+    "MAE_std": 0.2676458429819004,
+    "MdAE_mean": 0.6700777769088745,
+    "MdAE_std": 0.16705399041124486,
+    "best_epochs": [
+      12,
+      14,
+      8,
+      7,
+      10
+    ]
+  },
+  "final_epochs": 10,
+  "test": {
+    "MAE": 2.182116832441956,
+    "MdAE": 1.7466888427734375
+  },
+  "baseline_median_test": {
+    "MAE": 2.0,
+    "MdAE": 2.0
+  },
+  "source_sp_median": 3.0,
+  "target_sp_median": 1.0,
+  "status": "done",
+  "runtime_sec": 72.0,
+  "env": {
+    "torch": "2.14.1+cu130",
+    "python": "3.13.16",
+    "device": "cuda"
+  },
+  "config": {
+    "seed": 42,
+    "data": {
+      "csv_path": "data/tawos_story_points.csv",
+      "pairs_path": "data/pairs.csv",
+      "columns": {
+        "id": "Issue_ID",
+        "project": "Project_Name",
+        "title": "Title",
+        "description": "Description_Text",
+        "created": "Creation_Date",
+        "story_point": "Story_Point"
+      },
+      "project_aliases": {
+        "C++ driver (MongoDB)": "The Mongo C++ driver",
+        "Evergreen": "The MongoDB Engineering",
+        "C++ driver (Appcelerator)": "Aptana Studio"
+      },
+      "max_story_point": 500,
+      "min_source_issues": 50,
+      "min_target_test_issues": 10
+    },
+    "split": {
+      "source_dev_fraction": 0.8,
+      "n_folds": 5,
+      "target_test_fraction": 0.2
+    },
+    "text": {
+      "max_tokens": 128
+    },
+    "embeddings": {
+      "backend": "hf",
+      "bert_model": "bert-base-uncased",
+      "bert_layer": -1,
+      "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "batch_size": 32,
+      "cache_dir": "/content/cache"
+    },
+    "model": {
+      "mode": "bert",
+      "conv_channels": [
+        128,
+        128,
+        128
+      ],
+      "kernel_size": 3,
+      "sbert_proj_dim": 128,
+      "head_hidden": 128
+    },
+    "train": {
+      "max_epochs": 30,
+      "patience": 5,
+      "batch_size": 32,
+      "weight_decay": 0.0001,
+      "huber_delta": 1.0,
+      "grid": {
+        "lr": [
+          0.001,
+          0.0003
+        ],
+        "dropout": [
+          0.2,
+          0.4
+        ]
+      }
+    },
+    "output": {
+      "results_dir": "results"
+    },
+    "report": {
+      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)",
+      "group_members": [
+        "Member 1 name (roll no.)",
+        "Member 2 name (roll no.)"
+      ],
+      "github_url": "https://github.com/<your-username>/<your-repo>"
+    }
+  }
+}

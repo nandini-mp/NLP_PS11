@@ -1,0 +1,270 @@
+{
+  "pair_id": 9,
+  "train_project": "Mule APIkit",
+  "test_project": "Titanium Mobile Platform",
+  "train_project_tawos": "Mule APIkit",
+  "test_project_tawos": "Titanium Mobile Platform",
+  "mode": "bert",
+  "backend": "hf",
+  "n_source": 465,
+  "n_target_total": 1280,
+  "n_source_dev": 372,
+  "n_target_test": 256,
+  "grid": [
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        1.3137133200963338,
+        2.1616662979125976,
+        1.4135688688303973,
+        1.5797559635059253,
+        1.7743703819609977
+      ],
+      "fold_MdAE": [
+        1.035318374633789,
+        1.4914076328277588,
+        0.9770544171333313,
+        0.971709132194519,
+        1.4853129386901855
+      ],
+      "MAE_mean": 1.6486149664612504,
+      "MAE_std": 0.3358509476944124,
+      "MdAE_mean": 1.1921604990959167,
+      "MdAE_std": 0.27154929734699057,
+      "best_epochs": [
+        4,
+        11,
+        22,
+        4,
+        5
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        1.29266445795695,
+        2.0823500839869182,
+        1.3943255269849621,
+        1.588273114449269,
+        1.7304597915829838
+      ],
+      "fold_MdAE": [
+        1.0622308254241943,
+        1.297652006149292,
+        0.9843457937240601,
+        1.0324612855911255,
+        1.4648737907409668
+      ],
+      "MAE_mean": 1.6176145949922165,
+      "MAE_std": 0.31025176673791577,
+      "MdAE_mean": 1.1683127403259277,
+      "MdAE_std": 0.20507921041136354,
+      "best_epochs": [
+        5,
+        17,
+        22,
+        7,
+        12
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        1.3080503352483113,
+        2.1052811749776206,
+        1.5678784992243793,
+        1.6288779104078137,
+        1.787134457278896
+      ],
+      "fold_MdAE": [
+        1.0655534267425537,
+        1.3663954734802246,
+        1.1809399127960205,
+        0.9403197169303894,
+        1.4336600303649902
+      ],
+      "MAE_mean": 1.6794444754274043,
+      "MAE_std": 0.2940542376749475,
+      "MdAE_mean": 1.1973737120628356,
+      "MdAE_std": 0.20501402015669445,
+      "best_epochs": [
+        8,
+        22,
+        9,
+        4,
+        13
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        1.33178466796875,
+        2.1171325922012327,
+        1.4549357246708225,
+        1.6130087681718774,
+        1.7654367153708999
+      ],
+      "fold_MdAE": [
+        1.4342021942138672,
+        1.3589081764221191,
+        1.0928536653518677,
+        1.0169920921325684,
+        1.499769687652588
+      ],
+      "MAE_mean": 1.6564596936767164,
+      "MAE_std": 0.304962815775095,
+      "MdAE_mean": 1.280545163154602,
+      "MdAE_std": 0.21359948313154928,
+      "best_epochs": [
+        7,
+        23,
+        25,
+        10,
+        13
+      ]
+    }
+  ],
+  "selected_hp": {
+    "dropout": 0.2,
+    "lr": 0.0003
+  },
+  "cv": {
+    "hp": {
+      "dropout": 0.2,
+      "lr": 0.0003
+    },
+    "fold_MAE": [
+      1.29266445795695,
+      2.0823500839869182,
+      1.3943255269849621,
+      1.588273114449269,
+      1.7304597915829838
+    ],
+    "fold_MdAE": [
+      1.0622308254241943,
+      1.297652006149292,
+      0.9843457937240601,
+      1.0324612855911255,
+      1.4648737907409668
+    ],
+    "MAE_mean": 1.6176145949922165,
+    "MAE_std": 0.31025176673791577,
+    "MdAE_mean": 1.1683127403259277,
+    "MdAE_std": 0.20507921041136354,
+    "best_epochs": [
+      5,
+      17,
+      22,
+      7,
+      12
+    ]
+  },
+  "final_epochs": 12,
+  "test": {
+    "MAE": 3.889786991290748,
+    "MdAE": 1.5746320486068726
+  },
+  "baseline_median_test": {
+    "MAE": 3.677734375,
+    "MdAE": 2.0
+  },
+  "source_sp_median": 3.0,
+  "target_sp_median": 3.0,
+  "status": "done",
+  "runtime_sec": 91.9,
+  "env": {
+    "torch": "2.14.1+cu130",
+    "python": "3.13.16",
+    "device": "cuda"
+  },
+  "config": {
+    "seed": 42,
+    "data": {
+      "csv_path": "data/tawos_story_points.csv",
+      "pairs_path": "data/pairs.csv",
+      "columns": {
+        "id": "Issue_ID",
+        "project": "Project_Name",
+        "title": "Title",
+        "description": "Description_Text",
+        "created": "Creation_Date",
+        "story_point": "Story_Point"
+      },
+      "project_aliases": {
+        "C++ driver (MongoDB)": "The Mongo C++ driver",
+        "Evergreen": "The MongoDB Engineering",
+        "C++ driver (Appcelerator)": "Aptana Studio"
+      },
+      "max_story_point": 500,
+      "min_source_issues": 50,
+      "min_target_test_issues": 10
+    },
+    "split": {
+      "source_dev_fraction": 0.8,
+      "n_folds": 5,
+      "target_test_fraction": 0.2
+    },
+    "text": {
+      "max_tokens": 128
+    },
+    "embeddings": {
+      "backend": "hf",
+      "bert_model": "bert-base-uncased",
+      "bert_layer": -1,
+      "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "batch_size": 32,
+      "cache_dir": "/content/cache"
+    },
+    "model": {
+      "mode": "bert",
+      "conv_channels": [
+        128,
+        128,
+        128
+      ],
+      "kernel_size": 3,
+      "sbert_proj_dim": 128,
+      "head_hidden": 128
+    },
+    "train": {
+      "max_epochs": 30,
+      "patience": 5,
+      "batch_size": 32,
+      "weight_decay": 0.0001,
+      "huber_delta": 1.0,
+      "grid": {
+        "lr": [
+          0.001,
+          0.0003
+        ],
+        "dropout": [
+          0.2,
+          0.4
+        ]
+      }
+    },
+    "output": {
+      "results_dir": "results"
+    },
+    "report": {
+      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)",
+      "group_members": [
+        "Member 1 name (roll no.)",
+        "Member 2 name (roll no.)"
+      ],
+      "github_url": "https://github.com/<your-username>/<your-repo>"
+    }
+  }
+}
