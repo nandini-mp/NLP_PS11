@@ -1,0 +1,264 @@
+{
+  "pair_id": 24,
+  "train_project": "DotNetNuke Platform",
+  "test_project": "Indy Node",
+  "train_project_tawos": "DotNetNuke Platform",
+  "test_project_tawos": "Hyperledger Indy Node",
+  "mode": "combined",
+  "backend": "hf",
+  "n_source": 2585,
+  "n_target_total": 677,
+  "n_source_dev": 2068,
+  "n_target_test": 135,
+  "grid": [
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        0.8103507333907528,
+        0.83821374759222,
+        0.8111855846060358,
+        1.0689069003804832,
+        0.8708122642507853
+      ],
+      "fold_MdAE": [
+        0.5453829169273376,
+        0.48807859420776367,
+        0.5750518441200256,
+        0.5300120115280151,
+        0.5468907356262207
+      ],
+      "MAE_mean": 0.8798938460440555,
+      "MAE_std": 0.10851579395617159,
+      "MdAE_mean": 0.5370832204818725,
+      "MdAE_std": 0.03185178208398785,
+      "best_epochs": [
+        5,
+        6,
+        3,
+        9,
+        8
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.2,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        0.8160028287753966,
+        0.8515031185667008,
+        0.8027307331238104,
+        1.0685333611024206,
+        0.837514742812002
+      ],
+      "fold_MdAE": [
+        0.5399217009544373,
+        0.5633198618888855,
+        0.5872148275375366,
+        0.5603922605514526,
+        0.5263767242431641
+      ],
+      "MAE_mean": 0.8752569568760661,
+      "MAE_std": 0.1096763338376688,
+      "MdAE_mean": 0.5554450750350952,
+      "MdAE_std": 0.02335459401918108,
+      "best_epochs": [
+        7,
+        8,
+        7,
+        6,
+        9
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.001
+      },
+      "fold_MAE": [
+        0.8180602973210063,
+        0.8704666161846711,
+        0.8074682539751852,
+        1.083803358147277,
+        0.8956538190564578
+      ],
+      "fold_MdAE": [
+        0.5506685972213745,
+        0.5246220827102661,
+        0.6155896186828613,
+        0.5336004495620728,
+        0.6683914661407471
+      ],
+      "MAE_mean": 0.8950904689369195,
+      "MAE_std": 0.11161373788183478,
+      "MdAE_mean": 0.5785744428634644,
+      "MdAE_std": 0.06154160050711021,
+      "best_epochs": [
+        6,
+        6,
+        4,
+        9,
+        3
+      ]
+    },
+    {
+      "hp": {
+        "dropout": 0.4,
+        "lr": 0.0003
+      },
+      "fold_MAE": [
+        0.8130815098251122,
+        0.8497678822329366,
+        0.7949588241748475,
+        1.0765995399137964,
+        0.8752050451735895
+      ],
+      "fold_MdAE": [
+        0.6324326992034912,
+        0.5306556224822998,
+        0.58119797706604,
+        0.5494966506958008,
+        0.655890941619873
+      ],
+      "MAE_mean": 0.8819225602640565,
+      "MAE_std": 0.11322539065283871,
+      "MdAE_mean": 0.5899347782135009,
+      "MdAE_std": 0.05334294924212469,
+      "best_epochs": [
+        7,
+        14,
+        8,
+        21,
+        9
+      ]
+    }
+  ],
+  "selected_hp": {
+    "dropout": 0.2,
+    "lr": 0.0003
+  },
+  "cv": {
+    "hp": {
+      "dropout": 0.2,
+      "lr": 0.0003
+    },
+    "fold_MAE": [
+      0.8160028287753966,
+      0.8515031185667008,
+      0.8027307331238104,
+      1.0685333611024206,
+      0.837514742812002
+    ],
+    "fold_MdAE": [
+      0.5399217009544373,
+      0.5633198618888855,
+      0.5872148275375366,
+      0.5603922605514526,
+      0.5263767242431641
+    ],
+    "MAE_mean": 0.8752569568760661,
+    "MAE_std": 0.1096763338376688,
+    "MdAE_mean": 0.5554450750350952,
+    "MdAE_std": 0.02335459401918108,
+    "best_epochs": [
+      7,
+      8,
+      7,
+      6,
+      9
+    ]
+  },
+  "final_epochs": 7,
+  "test": {
+    "MAE": 1.7376646607010453,
+    "MdAE": 1.2180805206298828
+  },
+  "baseline_median_test": {
+    "MAE": 1.9925925925925927,
+    "MdAE": 1.0
+  },
+  "source_sp_median": 2.0,
+  "target_sp_median": 3.0,
+  "status": "done",
+  "runtime_sec": 342.7,
+  "env": {
+    "torch": "2.14.1+cu130",
+    "python": "3.13.16",
+    "device": "cuda"
+  },
+  "config": {
+    "seed": 42,
+    "data": {
+      "csv_path": "data/tawos_story_points.csv",
+      "pairs_path": "data/pairs.csv",
+      "columns": {
+        "id": "Issue_ID",
+        "project": "Project_Name",
+        "title": "Title",
+        "description": "Description_Text",
+        "created": "Creation_Date",
+        "story_point": "Story_Point"
+      },
+      "project_aliases": {
+        "C++ driver (MongoDB)": "The Mongo C++ driver",
+        "Evergreen": "The MongoDB Engineering",
+        "C++ driver (Appcelerator)": "Aptana Studio"
+      },
+      "min_source_issues": 50,
+      "min_target_test_issues": 10
+    },
+    "split": {
+      "source_dev_fraction": 0.8,
+      "n_folds": 5,
+      "target_test_fraction": 0.2
+    },
+    "text": {
+      "max_tokens": 128
+    },
+    "embeddings": {
+      "backend": "hf",
+      "bert_model": "bert-base-uncased",
+      "bert_layer": -1,
+      "sbert_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "batch_size": 32,
+      "cache_dir": "/content/cache"
+    },
+    "model": {
+      "mode": "combined",
+      "conv_channels": [
+        128,
+        128,
+        128
+      ],
+      "kernel_size": 3,
+      "sbert_proj_dim": 128,
+      "head_hidden": 128
+    },
+    "train": {
+      "max_epochs": 30,
+      "patience": 5,
+      "batch_size": 32,
+      "weight_decay": 0.0001,
+      "huber_delta": 1.0,
+      "grid": {
+        "lr": [
+          0.001,
+          0.0003
+        ],
+        "dropout": [
+          0.2,
+          0.4
+        ]
+      }
+    },
+    "output": {
+      "results_dir": "results"
+    },
+    "report": {
+      "title": "Combined BERT and SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)"
+    }
+  }
+}
