@@ -1,6 +1,6 @@
 # Combined BERT + SBERT Embeddings for Cross-Project Story Point Estimation (Random Split)
 
-**NLP project, Problem Statement 11** — combined word and sentence embeddings, cross-project setting, random split.
+**NLP project, Problem Statement 11** — combined word and sentence embeddings, cross-project setting, random split.  
 **Group 14** - Nidhi Binu, Nandini M Prakash, Tarun Pradeep, Nepala Chiruhhasan, Tej Pratap Singh
 
 ## 1. Problem statement
